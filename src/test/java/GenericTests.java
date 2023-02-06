@@ -1,6 +1,9 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GenericTests {
     @Test
     public void dummyTest() {
@@ -26,7 +29,7 @@ public class GenericTests {
     }
 
     @Test
-    public void BoundedGenericTest() {
+    public void boundedGenericTest() {
         BoundedGeneric<Double> doubles = new BoundedGeneric<>(new Double[]{1.2, 2.2, 3.3, 3.4, 5.5});
         BoundedGeneric<Integer> ints = new BoundedGeneric<>(new Integer[]{1, 2, 3, 4, 5});
 
@@ -35,7 +38,7 @@ public class GenericTests {
     }
 
     @Test
-    public void WildCardArgumentTest() {
+    public void wildCardArgumentTest() {
         WildCardArgument<Double> ob1 = new WildCardArgument<>(2.1);
         WildCardArgument<Float> ob2 = new WildCardArgument<>(2.1f);
         WildCardArgument<Float> ob3 = new WildCardArgument<>(2.3f);
@@ -50,7 +53,7 @@ public class GenericTests {
     }
 
     @Test
-    public void InstanceOfTest() {
+    public void instanceOfTest() {
         WildCardArgument<Double> ob1 = new WildCardArgument<>(2.1);
         WildCardArgument<Float> ob2 = new WildCardArgument<>(2.1f);
 
@@ -60,7 +63,7 @@ public class GenericTests {
     }
 
     @Test
-    public void GenericMethodTest() {
+    public void genericMethodTest() {
         Assert.assertTrue(GenericMethod.inInside(Integer.valueOf(3), new Integer[]{7, 8, 3}));
         Assert.assertFalse(GenericMethod.inInside(Integer.valueOf(3), new Integer[]{7, 8, 33}));
 
@@ -75,7 +78,7 @@ public class GenericTests {
     }
 
     @Test
-    public void GenericMethodTest2() {
+    public void genericMethodTest2() {
         Assert.assertTrue(GenericMethod.inInsideVer2(Integer.valueOf(3), new Integer[]{7, 8, 3}));
         Assert.assertFalse(GenericMethod.inInsideVer2(Integer.valueOf(3), new Integer[]{7, 8, 33}));
 
@@ -84,6 +87,49 @@ public class GenericTests {
 
         //same as above, but this time compiler complains
         /*Assert.assertTrue(GenericMethod.inInsideVer2(Double.valueOf(3.1), new Integer[]{7, 8, 3}));*/
+
+    }
+
+
+
+    @Test
+    public void minMaxTest() {
+        MinMax<Integer> integerMinMax = new MinMax<>(new Integer[]{1, 2, 3, 4, 8, 9, 10, -2, 11});
+        System.out.println("min je "+ integerMinMax.min());
+        System.out.println("max je "+ integerMinMax.max());
+    }
+    interface Printer{
+        void print(String msg);
+    }
+    @Test
+    public void genericInheritanceTest() {
+
+        //lamda in java is anonymous function, we can name it only by using functional interface? :D
+        Printer p = (String msg)->{System.out.println(msg);};
+
+        GenericBase<String> baseObject = new GenericBase<>("base");
+        GenericDerived<String> derived  = new GenericDerived<>("derived");
+        derived.getValue();
+        //SEE
+        //output src/test/testResources/instanceOf.PNG
+
+        if(baseObject instanceof GenericBase<String>)
+            p.print("baseObject is GenericBase<String>");
+
+        if(baseObject instanceof GenericBase<?>)
+            p.print("baseObject is GenericBase<?>");
+
+        //NOTE: PRECO TO FUNGUJE? PODLA KNIHY NEMA, JAVA 16
+        if(derived instanceof GenericBase<String>)
+            p.print("derivedObject is GenericBase<String>");
+
+        if(derived instanceof GenericBase<?>)
+            p.print("derivedObject is GenericBase<?>");
+
+        //NOTE: PRECO TO FUNGUJE? PODLA webu NEMA (sice stareho)
+        List<String> list = new ArrayList<>();
+        if( list instanceof List<String>)
+            p.print("list has type List<String>");
 
     }
 

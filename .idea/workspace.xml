@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f0394b0-64d8-4ce2-b7f3-316c770bb527" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GenericMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GenericBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GenericDerived.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/IMinMax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MinMax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MinMaxError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/testResources/instanceOf.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/GenericTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GenericTests.java" afterDir="false" />
     </list>
@@ -23,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -38,16 +43,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "full.screen.before.presentation.mode": "false",
+    "jdk.selected.JAVA_MODULE": "16",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.GenericTests.GenericMethodTest2">
-    <configuration name="GenericTests.BoundedGenericTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+}]]></component>
+  <component name="RunManager" selected="Gradle.GenericTests.genericInheritanceTest">
+    <configuration name="GenericTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -60,7 +68,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GenericTests.BoundedGenericTest&quot;" />
+            <option value="&quot;GenericTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -116,7 +124,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GenericTests.InstanceOfTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GenericTests.genericInheritanceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -129,7 +137,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GenericTests.InstanceOfTest&quot;" />
+            <option value="&quot;GenericTests.genericInheritanceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -139,7 +147,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GenericTests.WildCardArgumentTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GenericTests.minMaxTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -152,7 +160,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GenericTests.WildCardArgumentTest&quot;" />
+            <option value="&quot;GenericTests.minMaxTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GenericTests.genericInheritanceTest" />
+        <item itemvalue="Gradle.GenericTests.minMaxTest" />
+        <item itemvalue="Gradle.GenericTests" />
         <item itemvalue="Gradle.GenericTests.GenericMethodTest2" />
         <item itemvalue="Gradle.GenericTests.GenericMethodTest" />
-        <item itemvalue="Gradle.GenericTests.InstanceOfTest" />
-        <item itemvalue="Gradle.GenericTests.WildCardArgumentTest" />
-        <item itemvalue="Gradle.GenericTests.BoundedGenericTest" />
       </list>
     </recent_temporary>
   </component>
@@ -188,30 +196,43 @@
       <option name="project" value="LOCAL" />
       <updated>1675346990380</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="GenericMethod with generic arguments bounds">
+      <created>1675425290467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675425290467</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Generic Class, BoundedGeneric &amp; WildArgument&#10;NOTE: i tried to use testng.xml, for better test formating, but for current Gradle version, suites argument for test {} in gradle bandle is not present in gradle core.jar. In gradle config file i tried upgrade version of gradle (it worked but after intellij restart = close &amp; open ). Then suites is was discovered for newer version of gradle, but still  format displaying of tests predefinied by testng.xml didnt work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Generic Class, BoundedGeneric &amp; WildArgument&#10;NOTE: i tried to use testng.xml, for better test formating, but for current Gradle version, suites argument for test {} in gradle bandle is not present in gradle core.jar. In gradle config file i tried upgrade version of gradle (it worked but after intellij restart = close &amp; open ). Then suites is was discovered for newer version of gradle, but still  format displaying of tests predefinied by testng.xml didnt work." />
+    <MESSAGE value="GenericMethod with generic arguments bounds" />
+    <option name="LAST_COMMIT_MESSAGE" value="GenericMethod with generic arguments bounds" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>42</line>
+          <line>45</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>56</line>
+          <line>59</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>72</line>
+          <line>75</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
