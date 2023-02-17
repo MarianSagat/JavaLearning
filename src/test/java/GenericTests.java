@@ -133,4 +133,8 @@ public class GenericTests {
 
     }
 
+    @Test
+    public void emptyTest() {
+
+    }
 }
