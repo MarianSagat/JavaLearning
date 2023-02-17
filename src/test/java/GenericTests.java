@@ -134,7 +134,7 @@ public class GenericTests {
     }
 
     @Test
-    public void emptyTest() {
+    public void empty() {
 
     }
 }
