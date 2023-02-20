@@ -142,4 +142,9 @@ public class GenericTests {
     public void testFromBranchForIntellijGit() {
 
     }
+
+    @Test
+    public void intellijGitPokus2() {
+        GenericBase<String> baseObject = new GenericBase<>("base");
+    }
 }
