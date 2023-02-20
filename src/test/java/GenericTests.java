@@ -137,4 +137,9 @@ public class GenericTests {
     public void emptyTest() {
 
     }
+
+    @Test
+    public void testFromBranchForIntellijGit() {
+
+    }
 }
