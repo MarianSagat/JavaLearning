@@ -148,4 +148,9 @@ public class GenericTests {
         GenericBase<String> baseObject = new GenericBase<>("Base new name.");
         String val = baseObject.getValue();
     }
+
+    @Test
+    public void anotherEmpty() {
+
+    }
 }
