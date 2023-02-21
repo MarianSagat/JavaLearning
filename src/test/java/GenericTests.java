@@ -145,8 +145,10 @@ public class GenericTests {
 
     @Test
     public void intellijGitPokus2() {
-        GenericBase<String> baseObject = new GenericBase<>("Base new name.");
+        GenericBase<String> baseObject = new GenericDerived<>("Base new name.");
         String val = baseObject.getValue();
+        System.out.println(val);
+
     }
 
     @Test
