@@ -149,6 +149,7 @@ public class GenericTests {
         String val = baseObject.getValue();
         Printer p = (String msg)->{System.out.println(msg);};
         p.print(val);
+        p.print("bla bla");
     }
 
     @Test
