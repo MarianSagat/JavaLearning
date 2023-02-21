@@ -147,6 +147,8 @@ public class GenericTests {
     public void intellijGitPokus2() {
         GenericBase<String> baseObject = new GenericBase<>("Base new name.");
         String val = baseObject.getValue();
+        Printer p = (String msg)->{System.out.println(msg);};
+        p.print(val);
     }
 
     @Test
