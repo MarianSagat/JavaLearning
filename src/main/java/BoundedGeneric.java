@@ -6,9 +6,9 @@ public class BoundedGeneric<T extends Number> {
     double calculateAverage() {
         double sum = 0.0;
         for (var val : numbers) {
-            sum+=val.doubleValue();
+            sum += val.doubleValue();
         }
-        return  sum/numbers.length;
+        return sum / numbers.length;
     }
 
 
