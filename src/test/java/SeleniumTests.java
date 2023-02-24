@@ -1,8 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
@@ -43,18 +45,20 @@ public class SeleniumTests {
         driver.quit();
     }
 
-
-    @Test
-    public void waitUntilTest() {
-        //NO PAGE OBJECT MODEL
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    private static void logUser(WebDriver driver) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         driver.get("http://www.practice.bpbonline.com/");
 
         driver.findElement(By.linkText("My Account")).click();
         driver.findElement(By.name("email_address")).sendKeys("bpb@bpb.com");
         driver.findElement(By.name("password")).sendKeys("bpb@123");
         driver.findElement(By.id("tdb1")).click();
+    }
+    @Test
+    public void waitUntilTest() {
+        //NO PAGE OBJECT MODEL
+        WebDriver driver = new ChromeDriver();
+        logUser(driver);
 
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
@@ -71,4 +75,36 @@ public class SeleniumTests {
         //webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("JUNK")));
         driver.quit();
     }
+
+    @Test
+    public void formsTest() {
+        //NO PAGE OBJECT MODEL
+        WebDriver driver = new ChromeDriver();
+        logUser(driver);
+
+        driver.findElement(By.linkText("View or change my account information.")).click();
+        Assert.assertTrue(driver.findElement(By.xpath("//input[@value='m']")).isSelected());
+        var telephoneElement = driver.findElement(By.name("telephone"));
+        telephoneElement.clear();
+        telephoneElement.sendKeys("0902999666");
+        WebElement w1 = driver.findElement(By.id("tdb5"));//
+        WebElement w2 = driver.findElement(By.xpath("//button//*[contains(., 'Continue')]"));
+        System.out.println(w1.getText());
+        System.out.println(w2.getText());
+
+        //they differ by one pixel
+        System.out.println(w1.getLocation());
+        System.out.println(w2.getLocation());
+        Assert.assertEquals(w1.getText(),(w2.getText()));
+        w2.click();
+        //NOTE IT IS REALLY HTML SOURCE OF PAGE
+        //System.out.println(driver.getPageSource());
+
+        Assert.assertTrue(driver.getPageSource().contains("Your account has been successfully updated."));
+
+
+
+        driver.quit();
+    }
+
 }
