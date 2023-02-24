@@ -105,6 +105,7 @@ public class GenericTests {
     public void genericInheritanceTest() {
 
         //lamda in java is anonymous function, we can name it only by using functional interface? :D
+        //NOTE: FOR THIS CAN BE USED CONSUMER
         Printer p = (String msg)->{System.out.println(msg);};
 
         GenericBase<String> baseObject = new GenericBase<>("base");
@@ -130,29 +131,6 @@ public class GenericTests {
         List<String> list = new ArrayList<>();
         if( list instanceof List<String>)
             p.print("list has type List<String>");
-
-    }
-
-    @Test
-    public void emptyTest() {
-
-    }
-
-    @Test
-    public void testFromBranchForIntellijGit() {
-
-    }
-
-    @Test
-    public void intellijGitPokus2() {
-        GenericBase<String> baseObject = new GenericDerived<>("Base new name.");
-        String val = baseObject.getValue();
-        System.out.println(val);
-
-    }
-
-    @Test
-    public void anotherEmpty() {
 
     }
 }
