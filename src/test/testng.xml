@@ -6,6 +6,8 @@
         <classes>
             <class name="GenericTests"/>
             <class name="SeleniumTests"/>
+            <class name="UnspecifiedTests"/>
+            <class name="FunctionalIterfacesTests"/>
         </classes>
     </test>
 </suite>
