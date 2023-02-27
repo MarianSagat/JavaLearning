@@ -1,7 +1,6 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -103,6 +102,40 @@ public class SeleniumTests {
         Assert.assertTrue(driver.getPageSource().contains("Your account has been successfully updated."));
 
 
+
+        driver.quit();
+    }
+
+    @Test
+    public void dragAndDropActionTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().window().maximize();
+
+
+        driver.get("https://jqueryui.com/droppable/");
+        // is this necessary?
+        //JavascriptExecutor executor =  (JavascriptExecutor) driver;
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,document.body.scrollHeight)");
+        driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
+
+        WebElement drag = driver.findElement(By.id("draggable"));
+        WebElement drop = driver.findElement(By.id("droppable"));
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(drag,drop).build().perform();
+
+        driver.quit();
+    }
+
+    @Test
+    public void compositeActionsTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().window().maximize();
+        driver.get("https://the-internet.herokuapp.com/key_presses");
+        WebElement textBox = driver.findElement(By.id("target"));
+        Actions actions = new Actions(driver);
+        actions.sendKeys(textBox,Keys.TAB).sendKeys(textBox,Keys.SPACE).build().perform();
 
         driver.quit();
     }
