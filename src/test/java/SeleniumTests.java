@@ -100,9 +100,6 @@ public class SeleniumTests {
         //System.out.println(driver.getPageSource());
 
         Assert.assertTrue(driver.getPageSource().contains("Your account has been successfully updated."));
-
-
-
         driver.quit();
     }
 

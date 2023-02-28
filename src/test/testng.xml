@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test666 Suite">
+<suite name="All tests">
     <test verbose="2" preserve-order="true"
-          name="JavaLearning/src/test">
+          name="Java Tests">
         <classes>
             <class name="GenericTests"/>
-            <class name="SeleniumTests"/>
             <class name="UnspecifiedTests"/>
             <class name="FunctionalIterfacesTests"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="Selenium Tests">
+        <classes>
+            <class name="SeleniumTests"/>
+            <class name="CssSelectorTests"/>
         </classes>
     </test>
 </suite>
