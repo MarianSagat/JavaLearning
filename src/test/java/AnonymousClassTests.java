@@ -1,6 +1,6 @@
 import org.testng.annotations.Test;
 
-public class UnspecifiedTests {
+public class AnonymousClassTests {
 
     interface IAction<T> {
         void execute(T item);
