@@ -5,8 +5,8 @@
           name="Java Tests">
         <classes>
             <class name="GenericTests"/>
-            <class name="UnspecifiedTests"/>
             <class name="FunctionalIterfacesTests"/>
+            <class name="RecordInJavaTests"/>
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
