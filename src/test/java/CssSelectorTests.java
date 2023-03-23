@@ -5,8 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.nio.channels.Selector;
 import java.nio.file.Path;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -203,5 +205,19 @@ public class CssSelectorTests {
         //TODO i would find if foundedElement_2 is in elements
     }
 
+    @Test
+    public void listOfSomeCssSelectors()
+    {
+        List<By> selectors = List.of(
+                //inside table with class
+                // find another element (it is table ) with summary
+                //direct child tbody
+                //direct child table row (tr) first child (from up to down)
+                //direct child table row (tr) first child (from up to down)
+                //direct child table data (td) first child
+                //all indirect children with tag input (in concrete case there was only one input tag)
+                new By.ByCssSelector("table[class='x1he x1i2'][summary='Opportunity Revenue Items']>tbody>tr:nth-child(1)>td:nth-child(1) input")
+        );
+    }
     /* TODO use testNg template tests, because these 3 tests are the same, only difference is cssSelector and expectedResults, same code */
 }

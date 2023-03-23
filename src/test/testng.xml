@@ -7,6 +7,7 @@
             <class name="GenericTests"/>
             <class name="FunctionalIterfacesTests"/>
             <class name="RecordInJavaTests"/>
+            <class name="AdditionForAllanTests"/>
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
