@@ -12,9 +12,8 @@ public class ReportsTests {
         IReport report = builder
                 .withHeader("Project JavaLearning")
                 .withLogo(Path.of("src/test/testResources/Basic-Web/img/logo.png"))
-                .withFooter("Test results for suite with %s tests. Date:%s "
-                        .formatted("4")
-                        .formatted(LocalDate.now()))
+                .withFooter("Test results for suite with %s tests. Date: %s "
+                        .formatted("4",LocalDate.now()))
                 .with(new TestResult("testBoolean",
                         "Simple test only for visulisation",
                         Path.of("src/test/testResources/Basic-Web/img/team1.png"),
