@@ -15,6 +15,17 @@ dependencies {
 // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.8.2'
 
+    // https://mvnrepository.com/artifact/net.sourceforge.dynamicreports/dynamicreports-core
+    implementation group: 'net.sourceforge.dynamicreports', name: 'dynamicreports-core', version: '6.12.1'
+
+    // https://mvnrepository.com/artifact/com.lowagie/itext
+    implementation group: 'com.lowagie', name: 'itext', version: '2.1.7'
+
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
+
+
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     //implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.6'
 

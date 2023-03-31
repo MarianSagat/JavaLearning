@@ -38,5 +38,6 @@ public class ReportsTests {
                 .build();
 
         report.generatePDF();
+        report.generatePDF_SimpleReport_Step12();
     }
 }
