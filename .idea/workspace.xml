@@ -4,58 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f0394b0-64d8-4ce2-b7f3-316c770bb527" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/GenericBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GenericDerived.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/IMinMax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MinMax.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MinMaxError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testResources/instanceOf.PNG" afterDir="false" />
+    <list default="true" id="eb9cc983-14ce-4146-9fbd-06077b1e724d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GenericTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GenericTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="module" />
+    </option>
+  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Java/jdk-16.0.2/lib/src.zip!/java.base/java/lang/Comparable.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2LBMwPeGzuIOJK0yQLVK60xLduO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "full.screen.before.presentation.mode": "false",
-    "jdk.selected.JAVA_MODULE": "16",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3118527"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.GenericTests.genericInheritanceTest">
-    <configuration name="GenericTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.CssSelectorTests.locateAllImagesFromSrcDir">
+    <configuration name="CssSelectorTests.locateAllImagesFromSrcDir" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -68,7 +64,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GenericTests&quot;" />
+            <option value="&quot;CssSelectorTests.locateAllImagesFromSrcDir&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -78,7 +74,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GenericTests.GenericMethodTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CssSelectorTests.moreComplicatedConstruction" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -91,7 +87,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GenericTests.GenericMethodTest&quot;" />
+            <option value="&quot;CssSelectorTests.moreComplicatedConstruction&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -101,7 +97,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GenericTests.GenericMethodTest2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests in 'JavaLearning.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -113,54 +109,6 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;GenericTests.GenericMethodTest2&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GenericTests.genericInheritanceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;GenericTests.genericInheritanceTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GenericTests.minMaxTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;GenericTests.minMaxTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,67 +120,36 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GenericTests.genericInheritanceTest" />
-        <item itemvalue="Gradle.GenericTests.minMaxTest" />
-        <item itemvalue="Gradle.GenericTests" />
-        <item itemvalue="Gradle.GenericTests.GenericMethodTest2" />
-        <item itemvalue="Gradle.GenericTests.GenericMethodTest" />
+        <item itemvalue="Gradle.CssSelectorTests.locateAllImagesFromSrcDir" />
+        <item itemvalue="Gradle.CssSelectorTests.moreComplicatedConstruction" />
+        <item itemvalue="Gradle.Tests in 'JavaLearning.test'" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="0f0394b0-64d8-4ce2-b7f3-316c770bb527" name="Changes" comment="" />
-      <created>1675340261985</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1675340261985</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Generic Class, BoundedGeneric &amp; WildArgument&#10;NOTE: i tried to use testng.xml, for better test formating, but for current Gradle version, suites argument for test {} in gradle bandle is not present in gradle core.jar. In gradle config file i tried upgrade version of gradle (it worked but after intellij restart = close &amp; open ). Then suites is was discovered for newer version of gradle, but still  format displaying of tests predefinied by testng.xml didnt work.">
-      <created>1675346990380</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1675346990380</updated>
-    </task>
-    <task id="LOCAL-00002" summary="GenericMethod with generic arguments bounds">
-      <created>1675425290467</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1675425290467</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Generic Class, BoundedGeneric &amp; WildArgument&#10;NOTE: i tried to use testng.xml, for better test formating, but for current Gradle version, suites argument for test {} in gradle bandle is not present in gradle core.jar. In gradle config file i tried upgrade version of gradle (it worked but after intellij restart = close &amp; open ). Then suites is was discovered for newer version of gradle, but still  format displaying of tests predefinied by testng.xml didnt work." />
-    <MESSAGE value="GenericMethod with generic arguments bounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="GenericMethod with generic arguments bounds" />
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/GenericTests.java</url>
-          <line>115</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/test/java/CssSelectorTests.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
