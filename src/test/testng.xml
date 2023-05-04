@@ -17,4 +17,11 @@
             <class name="CssSelectorTests"/>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true"
+          name="External Libraries Tests">
+        <classes>
+            <class name="GitlabInterpreterTest"/>
+        </classes>
+    </test>
+
 </suite>
