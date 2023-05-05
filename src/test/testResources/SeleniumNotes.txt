@@ -1,0 +1,2 @@
+how inspect dropdown menu in chrome -> ctrl+I, console: ctrl+P, hint: ?,
+select run comman, type focused page, choose Emulate focused page. Now you can inspect dropdown menu.
