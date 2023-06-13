@@ -3,6 +3,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.function.BooleanSupplier;
+import java.util.stream.Stream;
 
 /**
  * CHECKED EXCEPTIONS HAS TO BE HANDLED OR PROPAGATED VIA THROWS
@@ -41,6 +42,16 @@ public class CheckedExceptionsTests
     @Test
     public void callerHandles_InterruptedException_test()
     {
+        System.out.println(
+                Stream.of("1", "2", "3", "4")
+                        .map(entry -> entry + "a")
+                        .reduce("", (a, b) ->
+                                {
+                                    return a + " " + b;
+                                }
+                        ));
+
+        ;
         try
         {
             Assert.assertFalse(consumerSolution2.getAsBoolean());
@@ -50,13 +61,4 @@ public class CheckedExceptionsTests
             interruptedException.printStackTrace();
         }
     }
-
-    /*TcLog.warning("modals are: " + css.findControls(ODModalControl.getSelector())
-                    .stream()
-                    .map(element -> element.getText().substring(0, 10))
-                    .reduce("", (a, b) ->
-                            {
-                                return a + " " + b;
-                            }
-                    ));*/
 }
