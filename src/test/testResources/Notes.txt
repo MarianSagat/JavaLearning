@@ -5,3 +5,6 @@ Ssl certificate
 keytool -import -alias "nameForCertificateInStore" -keystore
 'C:\Program Files\Java\jdk-17\lib\security\cacerts'
 -file "pathToYourCertificate.crt"
+
+how stop program in chrome e.g. on spinner loading? for example,
+set all break on parent element (three types -> atributte modification, subtree modification, node removal)

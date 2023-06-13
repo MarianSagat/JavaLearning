@@ -1,11 +1,10 @@
 import net.sf.jasperreports.olap.mapping.Tuple;
+import org.apache.tools.ant.types.resources.selectors.InstanceOf;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -79,12 +78,58 @@ public class StreamTests
         );
 
         List<IElement> elements = elementsInfo.stream().flatMap(
-                info ->
-                {
-                    return Stream.of(new Section(info.sectionName), new Paragraph(info.paragraphName));
-                })
+                        info ->
+                        {
+                            return Stream.of(new Section(info.sectionName), new Paragraph(info.paragraphName));
+                        })
                 .toList();
 
-        elements.forEach(e->System.out.println(e.getValue()));
+        elements.forEach(e -> System.out.println(e.getValue()));
+    }
+
+    @Test
+    public void streamTest()
+    {
+        Stream.of(new Section("Section"), new Section("Section 2"), "234")
+                .map(value -> (value instanceof Section ? ((Section) value).sectionName : value))
+                .forEach(System.out::println);
+    }
+
+    @Test
+    public void streamTest2()
+    {
+        //still cannot convert simply into one stream if we dont want to use some flat map if(instanceof...)
+        //stream of {string,stream}
+        Section[] sections = new Section[]{new Section("Section"), new Section("Section 2")};
+        Stream.of(new String("bla bla"),
+                        Stream.of(sections)
+                                .map(Section::getValue)
+                                .toList()
+                )
+                .toList()
+                .forEach(System.out::println);
+    }
+
+    @Test
+    public void streamTest3()
+    {
+        Arrays.asList("123",
+                        Stream.of("234", 345)
+                                .toList())
+                .forEach(System.out::println);
+    }
+
+    @Test
+    public void streamTest4()
+    {
+        //it is ugly but the best solution which i found
+        Section[] sections = new Section[]{new Section("Section"), new Section("Section 2")};
+        Stream.concat(
+                        Stream.of(new String("bla bla")),
+                        Stream.of(sections)
+                                .map(Section::getValue)
+                )
+                .toList()
+                .forEach(System.out::println);
     }
 }

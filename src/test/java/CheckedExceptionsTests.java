@@ -50,4 +50,13 @@ public class CheckedExceptionsTests
             interruptedException.printStackTrace();
         }
     }
+
+    /*TcLog.warning("modals are: " + css.findControls(ODModalControl.getSelector())
+                    .stream()
+                    .map(element -> element.getText().substring(0, 10))
+                    .reduce("", (a, b) ->
+                            {
+                                return a + " " + b;
+                            }
+                    ));*/
 }
