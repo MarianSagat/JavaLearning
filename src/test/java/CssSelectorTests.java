@@ -14,8 +14,8 @@ import java.util.stream.IntStream;
 
 //https://www.dofactory.com/css/ref/selectors
 //https://www.digitalocean.com/community/tutorials/css-css-selectors
-public class CssSelectorTests {
-
+public class CssSelectorTests
+{
 
     final Path path_1 = Path.of("src/test/testResources/page_1.html");
 
@@ -25,7 +25,8 @@ public class CssSelectorTests {
      * p is direct child of div
      **/
     @Test
-    public void div_greater_p() {
+    public void div_greater_p()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -38,7 +39,8 @@ public class CssSelectorTests {
         driver.quit();
     }
 
-    private static void testElements(List<WebElement> elements, List<String> expectedResults) {
+    private static void testElements(List<WebElement> elements, List<String> expectedResults)
+    {
         elements.forEach(webElement -> System.out.println(webElement.getText()));
         Assert.assertEquals(expectedResults.size(), elements.size());
         //unfortunately I am not aware of how iterate nice way through 2 collections (iterators , raw for loop is not a nice way)
@@ -51,7 +53,8 @@ public class CssSelectorTests {
      * p is direct or indirect child of div
      **/
     @Test
-    public void div_all_descendant() {
+    public void div_all_descendant()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -67,7 +70,8 @@ public class CssSelectorTests {
      * <p> div ~ p </p>
      */
     @Test
-    public void all_siblings_after_div() {
+    public void all_siblings_after_div()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -80,19 +84,19 @@ public class CssSelectorTests {
         driver.quit();
     }
 
-
     /**
      * <p>div + p</p>
      **/
     @Test
-    public void one_adjacent_sibling_immediately_after_div() {
+    public void one_adjacent_sibling_immediately_after_div()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         List<WebElement> elements = driver.findElements(By.cssSelector("div + p"));
         List<String> expectedResults = List.of("This is blue, is green");
-        testElements(elements,expectedResults);
+        testElements(elements, expectedResults);
 
         driver.quit();
     }
@@ -101,35 +105,37 @@ public class CssSelectorTests {
      * <p>div * p</p>
      **/
     @Test
-    public void secondLevelDescendant_firstLevelArbitraryTag() {
+    public void secondLevelDescendant_firstLevelArbitraryTag()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         List<WebElement> elements = driver.findElements(By.cssSelector("div * p"));
         List<String> expectedResults = List.of("This is normal colored");
-        testElements(elements,expectedResults);
+        testElements(elements, expectedResults);
 
         driver.quit();
     }
 
     final Path basicWebPath = Path.of("src/test/testResources/Basic-Web/index.html");
 
-
     @Test
-    public void locateAllImagesFromSrcDir() {
+    public void locateAllImagesFromSrcDir()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         List<WebElement> elements = driver.findElements(By.cssSelector("img[src^=img]"));
-        Assert.assertEquals(elements.size(),9);
+        Assert.assertEquals(elements.size(), 9);
 
         driver.quit();
     }
 
     @Test
-    public void locateOneImageOutsideOfDirSrc() {
+    public void locateOneImageOutsideOfDirSrc()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -137,22 +143,23 @@ public class CssSelectorTests {
         //img which attribute src NOT start with img string
         WebElement element = driver.findElement(By.cssSelector("img:not(img[src^=img])"));
         String srcAttribute = element.getAttribute("src");
-        Assert.assertEquals(srcAttribute.substring(srcAttribute.lastIndexOf("/")+1).trim(), "logo6.jpg");
+        Assert.assertEquals(srcAttribute.substring(srcAttribute.lastIndexOf("/") + 1).trim(), "logo6.jpg");
 
         //only one not more not less
-        Assert.assertEquals(driver.findElements(By.cssSelector("img:not(img[src^=img])")).size(),1);
+        Assert.assertEquals(driver.findElements(By.cssSelector("img:not(img[src^=img])")).size(), 1);
         driver.quit();
     }
 
     @Test
-    public void twoDescendantClasses() {
+    public void twoDescendantClasses()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         //img which attribute src NOT start with img string
         List<WebElement> elements = driver.findElements(By.cssSelector("div.col-12 p.lead"));
-        Assert.assertEquals(elements.size(),1);
+        Assert.assertEquals(elements.size(), 1);
         WebElement foundedElement = elements.stream().findFirst().get();
         Assert.assertTrue(foundedElement.getText().isEmpty());
         //<p> containing "Welcome to my website tutorial!"
@@ -161,20 +168,21 @@ public class CssSelectorTests {
     }
 
     @Test
-    public void severalDescendants() {
+    public void severalDescendants()
+    {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 
         //img which attribute src NOT start with img string
         List<WebElement> elements = driver.findElements(By.cssSelector("div div div div p"));
-        Assert.assertEquals(elements.size(),3);
+        Assert.assertEquals(elements.size(), 3);
         WebElement foundedElement = elements.stream().findFirst().get();
         Assert.assertTrue(foundedElement.getText().isEmpty());
 
         //same but with simpler way
         elements = driver.findElements(By.cssSelector("div p.card-text"));
-        Assert.assertEquals(elements.size(),3);
+        Assert.assertEquals(elements.size(), 3);
         foundedElement = elements.stream().findFirst().get();
         Assert.assertTrue(foundedElement.getText().isEmpty());
         //TODO how i get the correct one element containging text inside <p></p> withou xpath?
@@ -193,7 +201,6 @@ public class CssSelectorTests {
         Assert.assertEquals(elements.size(), 3);
         WebElement foundedElement = elements.stream().findFirst().get();
         Assert.assertTrue(foundedElement.getText().isEmpty());
-
 
         //UNIQUE SELECTION OF ONLY ONE FROM THESE 3
         List<WebElement> elements_2 = driver.findElements(By.cssSelector("div.card img[src*=\"team1\"]+div >a"));
@@ -218,6 +225,13 @@ public class CssSelectorTests {
                 //all indirect children with tag input (in concrete case there was only one input tag)
                 new By.ByCssSelector("table[class='x1he x1i2'][summary='Opportunity Revenue Items']>tbody>tr:nth-child(1)>td:nth-child(1) input")
         );
+    }
+
+    @Test
+    public void childSelector()
+    {
+        //tag2>textTag:nth-child(1) = direct child of tag2 which is type of textTag, NOT first child of textTag!
+        By.cssSelector("tag1  tag2>textTag:nth-child(1)");
     }
     /* TODO use testNg template tests, because these 3 tests are the same, only difference is cssSelector and expectedResults, same code */
 }
