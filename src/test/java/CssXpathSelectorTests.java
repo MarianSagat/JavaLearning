@@ -3,19 +3,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import java.nio.channels.Selector;
 import java.nio.file.Path;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
 //https://www.dofactory.com/css/ref/selectors
 //https://www.digitalocean.com/community/tutorials/css-css-selectors
-public class CssSelectorTests
-{
+public class CssXpathSelectorTests {
 
     final Path path_1 = Path.of("src/test/testResources/page_1.html");
 
@@ -25,8 +23,7 @@ public class CssSelectorTests
      * p is direct child of div
      **/
     @Test
-    public void div_greater_p()
-    {
+    public void div_greater_p() {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -39,8 +36,7 @@ public class CssSelectorTests
         driver.quit();
     }
 
-    private static void testElements(List<WebElement> elements, List<String> expectedResults)
-    {
+    private static void testElements(List<WebElement> elements, List<String> expectedResults) {
         elements.forEach(webElement -> System.out.println(webElement.getText()));
         Assert.assertEquals(expectedResults.size(), elements.size());
         //unfortunately I am not aware of how iterate nice way through 2 collections (iterators , raw for loop is not a nice way)
@@ -53,8 +49,7 @@ public class CssSelectorTests
      * p is direct or indirect child of div
      **/
     @Test
-    public void div_all_descendant()
-    {
+    public void div_all_descendant() {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -70,8 +65,7 @@ public class CssSelectorTests
      * <p> div ~ p </p>
      */
     @Test
-    public void all_siblings_after_div()
-    {
+    public void all_siblings_after_div() {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -88,8 +82,7 @@ public class CssSelectorTests
      * <p>div + p</p>
      **/
     @Test
-    public void one_adjacent_sibling_immediately_after_div()
-    {
+    public void one_adjacent_sibling_immediately_after_div() {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -105,8 +98,7 @@ public class CssSelectorTests
      * <p>div * p</p>
      **/
     @Test
-    public void secondLevelDescendant_firstLevelArbitraryTag()
-    {
+    public void secondLevelDescendant_firstLevelArbitraryTag() {
         WebDriver driver = new ChromeDriver();
         driver.get(path_1.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -121,8 +113,7 @@ public class CssSelectorTests
     final Path basicWebPath = Path.of("src/test/testResources/Basic-Web/index.html");
 
     @Test
-    public void locateAllImagesFromSrcDir()
-    {
+    public void locateAllImagesFromSrcDir() {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -133,9 +124,27 @@ public class CssSelectorTests
         driver.quit();
     }
 
+    /**
+     * find first preceding sibling of any type which is before specified element
+     * example:
+     * <b> </b>
+     * <a > </a>
+     */
+    @Ignore(" lazy to find example in basicWebPath.toUri()")
     @Test
-    public void locateOneImageOutsideOfDirSrc()
-    {
+    public void precedingSibling() {
+        WebDriver driver = new ChromeDriver();
+        driver.get(basicWebPath.toUri().toString());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+
+        List<WebElement> elements = driver.findElement(By.cssSelector("a"))
+                .findElements(By.xpath("preceding-sibling::*[1]"));
+
+        driver.quit();
+    }
+
+    @Test
+    public void locateOneImageOutsideOfDirSrc() {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -151,8 +160,7 @@ public class CssSelectorTests
     }
 
     @Test
-    public void twoDescendantClasses()
-    {
+    public void twoDescendantClasses() {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -168,8 +176,7 @@ public class CssSelectorTests
     }
 
     @Test
-    public void severalDescendants()
-    {
+    public void severalDescendants() {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -190,8 +197,7 @@ public class CssSelectorTests
     }
 
     @Test
-    public void moreComplicatedConstruction()
-    {
+    public void moreComplicatedConstruction() {
         WebDriver driver = new ChromeDriver();
         driver.get(basicWebPath.toUri().toString());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -213,8 +219,7 @@ public class CssSelectorTests
     }
 
     @Test
-    public void listOfSomeCssSelectors()
-    {
+    public void listOfSomeCssSelectors() {
         List<By> selectors = List.of(
                 //inside table with class
                 // find another element (it is table ) with summary
@@ -228,8 +233,7 @@ public class CssSelectorTests
     }
 
     @Test
-    public void childSelector()
-    {
+    public void childSelector() {
         //tag2>textTag:nth-child(1) = direct child of tag2 which is type of textTag, NOT first child of textTag!
         By.cssSelector("tag1  tag2>textTag:nth-child(1)");
     }

@@ -14,7 +14,7 @@
           name="Selenium Tests">
         <classes>
             <class name="SeleniumTests"/>
-            <class name="CssSelectorTests"/>
+            <class name="CssXpathSelectorTests"/>
         </classes>
     </test>
     <test verbose="2" preserve-order="true"
