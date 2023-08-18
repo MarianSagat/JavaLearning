@@ -8,3 +8,9 @@ keytool -import -alias "nameForCertificateInStore" -keystore
 
 how stop program in chrome e.g. on spinner loading? for example,
 set all break on parent element (three types -> atributte modification, subtree modification, node removal)
+
+
+test history is in:
+%LOCALAPPDATA%\JetBrains\
+C:\Users\...\AppData\Local\JetBrains\IntelliJIdea2022.3\testHistory\d90f26c
+source: https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#change-ide-dirs
