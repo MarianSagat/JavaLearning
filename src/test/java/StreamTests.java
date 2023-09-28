@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Array;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -131,5 +133,11 @@ public class StreamTests
                 )
                 .toList()
                 .forEach(System.out::println);
+    }
+
+    @Test
+    public void reduce() throws ParseException {
+       System.out.println(List.of(1,2,3,4,5).stream().reduce(Integer::sum));
+        NumberFormat.getNumberInstance(java.util.Locale.US).parse("265,858");
     }
 }
