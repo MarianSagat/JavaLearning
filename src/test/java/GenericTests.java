@@ -1,8 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GenericTests
 {
@@ -231,5 +230,57 @@ public class GenericTests
          */
         //genericPrint_StopCrazinesFinally("String", 2.5);
 
+    }
+
+    interface Animal
+    {
+
+    }
+
+    class Dog implements Animal
+    {
+
+        @Override
+        public String toString()
+        {
+            return "haf";
+        }
+    }
+
+    class Cat implements Animal
+    {
+        @Override
+        public String toString()
+        {
+            return "mnau";
+        }
+    }
+    @Test
+    public void wildcardList()
+    {
+        List<Dog> dogs = List.of(new Dog());
+        List<Cat> cats = List.of(new Cat());
+        List<? extends Animal> list = dogs;
+        /**
+         * IT STANDS FOR PARTICULAR BUT UNKNOWN TYPE, SO NO NEW ELEMENT CAN BE ADDED TO THIS LIST
+         * BECAUSE STUPID JAVA DOESNT KNOW WHICH TYPE IS PRESENT, SOME IS PRESENT BUT UNKNOWN
+         * === List<? extends Animal>  IS READ ONLY!!! -> cannot add new objects, but can modify already existing!!
+         * List<? super Object> WRITE ONLY -> can add new objects
+         * see example of Collections.copy
+         */
+
+        // ERROR
+        /*list.add(new Dog());
+        list.add(new Cat());*/
+
+        list = cats;
+        list = List.of(new Dog(),new Cat());
+        //list.add(new Cat()); ERROR
+
+        List<Animal> listDestination = new ArrayList<>();
+        listDestination.add(new Cat());
+        System.out.println(listDestination.size());
+        Collections.copy(listDestination,dogs);
+        System.out.println(listDestination);
     }
 }
