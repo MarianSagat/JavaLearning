@@ -1,4 +1,7 @@
 import org.testng.annotations.Test;
+import reportsExperiment.dynamicReports.IReport;
+import reportsExperiment.dynamicReports.ReportBuilder;
+import reportsExperiment.dynamicReports.TestResult;
 
 import java.nio.file.Path;
 import java.time.LocalDate;

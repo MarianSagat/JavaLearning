@@ -14,6 +14,8 @@ public class WildCardArgument<T extends Number> {
         //always same :/
         //return this.getClass().getTypeName() == other.getClass().getTypeName();
 
+        System.out.println(this.getArgumentTypeName());
+        System.out.println(other.getArgumentTypeName());
         return this.getArgumentTypeName().equals(other.getArgumentTypeName());
     }
 

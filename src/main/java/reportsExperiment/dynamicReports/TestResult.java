@@ -1,3 +1,5 @@
+package reportsExperiment.dynamicReports;
+
 import java.nio.file.Path;
 
 public record TestResult<T>(

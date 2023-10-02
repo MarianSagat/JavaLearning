@@ -1,3 +1,5 @@
+package reportsExperiment.dynamicReports;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.nio.file.Path;
@@ -21,6 +23,8 @@ import net.sf.dynamicreports.report.constant.VerticalTextAlignment;
 import net.sf.dynamicreports.report.datasource.DRDataSource;
 import net.sf.dynamicreports.report.exception.DRException;
 import net.sf.jasperreports.engine.JRDataSource;
+
+import javax.xml.transform.Templates;
 
 public class DynamicReport implements IReport{
     List<TestResult<?>> testResultList;

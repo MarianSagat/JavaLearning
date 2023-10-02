@@ -1,10 +1,12 @@
+package reportsExperiment.dynamicReports;
+
 import java.nio.file.Path;
 
 public class ReportBuilder {
 
     private DynamicReport dynamicReport;
 
-    ReportBuilder()
+    public ReportBuilder()
     {
         dynamicReport = new DynamicReport();
     }
