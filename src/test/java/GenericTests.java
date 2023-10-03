@@ -2,6 +2,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class GenericTests
 {
@@ -198,6 +199,24 @@ public class GenericTests
         System.out.println(second);
     }
 
+    public <T> void genericPrintForLists(List<T> first, List<T> second)
+    {
+        System.out.println(first);
+        System.out.println(second);
+    }
+
+    public <T,U> void genericPrintForLists_2(List<T> first, List<U> second)
+    {
+        System.out.println(first);
+        System.out.println(second);
+    }
+
+    public <U> void genericPrintForLists_3(List<? extends U> first, List<? extends U> second)
+    {
+        System.out.println(first);
+        System.out.println(second);
+    }
+
     @Test
     public void testGeneric_WithReallyTheSameArgumentType_OrDerived()
     {
@@ -255,6 +274,24 @@ public class GenericTests
             return "mnau";
         }
     }
+
+    @Test
+    public void testForTheSameListArguments()
+    {
+        //Intiger & String both are derived from Object, that reason why it is working
+        genericPrintForLists(List.of(1,2,3),List.of("1","2","3"));
+        List<Dog> dogs = List.of(new Dog());
+        List<Cat> cats = List.of(new Cat());
+        List<Animal> animals = new ArrayList<>();
+        //COMPILE ERROR, animals & dogs are not extending the same class -> here types are different
+        //genericPrintForLists(animals,dogs); COMPILE ERROR
+        //genericPrintForLists(dogs,cats); //COMPILE ERROR
+
+        genericPrintForLists_2(dogs,cats);
+        genericPrintForLists_2(animals,cats);
+        genericPrintForLists_3(dogs,cats);
+        genericPrintForLists_3(dogs,animals);
+    }
     @Test
     public void wildcardList()
     {
@@ -282,5 +319,17 @@ public class GenericTests
         System.out.println(listDestination.size());
         Collections.copy(listDestination,dogs);
         System.out.println(listDestination);
+    }
+
+    @Test
+    public void flatMapExplanationOfSignature()
+    {
+        //<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> var1);
+
+        /****
+         * (1) dont return wildcard parameters (unknown types -> make difficult life)
+         * (2) ? super T ->input parameters
+         * (3) ? extends R -> output parameters ( output type for flatMap quite long )
+         */
     }
 }
