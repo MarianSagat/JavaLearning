@@ -256,6 +256,16 @@ public class GenericTests
 
     }
 
+    interface UnderAnimal extends Animal
+    {
+
+    }
+
+    class UnderAnimalll implements UnderAnimal
+    {
+
+    }
+
     class Dog implements Animal
     {
 
@@ -310,6 +320,7 @@ public class GenericTests
         /*list.add(new Dog());
         list.add(new Cat());*/
 
+        //list.add(new UnderAnimalll()); ERROR stil the same explanation
         list = cats;
         list = List.of(new Dog(),new Cat());
         //list.add(new Cat()); ERROR
@@ -331,5 +342,16 @@ public class GenericTests
          * (2) ? super T ->input parameters
          * (3) ? extends R -> output parameters ( output type for flatMap quite long )
          */
+
+        List<Animal> list = List.of(new Dog(),new Dog());
+        list.add(new Cat());
+    }
+
+    @Test
+    public void lowerBoundForWildCard()
+    {
+
+        List<? super Cat> moreGeneralThanCat = new ArrayList<>();
+        moreGeneralThanCat.add(new Cat());
     }
 }
