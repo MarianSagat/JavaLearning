@@ -24,6 +24,17 @@ public class StreamTests
     }
 
     @Test
+    void testTransform_11()
+    {
+        Set<Integer> stringSet = List.of(0, 1, 2, 3).stream()
+                .map(i -> 2 * i)
+                .map(integer -> integer+1)
+                .collect(Collectors.toCollection(HashSet::new));
+
+        stringSet.forEach(e -> System.out.println(e));
+    }
+
+    @Test
     void testTransform2()
     {
         List<String> stringSet = List.of(0, 1, 2, 3).stream()
