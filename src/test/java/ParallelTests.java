@@ -16,6 +16,9 @@ public class ParallelTests
                     {
                         System.out.println("error ");
                         Thread.currentThread().interrupt();
+                        //EACH FUNCTION AS SLEEP/WAIT ... WILL THROW INTERUPTED EXCEPTION
+                        //NO CUSTOM SHUTDOWN - INTERRUPT IS SETTING ONLY SOME FLAG,
+                        //WHICH IS NOT CAUSING INTERRUPTION OF THREAD AT ALL
                        // throw new NoSuchMethodError();
 
                     }
