@@ -33,7 +33,7 @@ public class CollectionsTests
         classicMap.put("Fourth", 4);
 
         Assertions.assertIterableEquals(
-                List.of(2,3, 1, 4),
+                List.of(2, 3, 1, 4),
                 classicMap
                         .entrySet()
                         .stream()
